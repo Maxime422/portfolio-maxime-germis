@@ -1,0 +1,40 @@
+/* Dark mode colors */
+[data-theme="dark"] {
+  --color-blue: #2d45f5;
+  --color-blue-1: #3b5dce;
+  --color-blue-2: #5476ff;
+
+  --color-white-opacity-20: rgb(9, 9, 9, 0.2);
+  --color-white: #090909;
+  --color-white-1: #121212;
+  --color-white-2: #1a1a1a;
+  --color-white-3: #292929;
+  --color-white-4: #212121;
+  --color-white-5: #24222c;
+
+  --color-gray: #989898;
+
+  --color-black-opacity-20: rgba(250, 250, 250, 0.2);
+  --color-black: #fafafa;
+  --color-black-1: #eeedf4;
+  --color-black-2: #dedeeb;
+  --color-black-3: #ccccdb;
+  --color-black-4: #ccccdb;
+  --color-black-5: #d5d5e1;
+
+  --color-red: #e3455a;
+  --color-red-1: #eb8492;
+
+  --color-green: #15e584;
+  --color-green-1: #2dcd82;
+  --color-green-2: #65e1a7;
+
+  --color-fix-white: #fafafa;
+  --color-fix-white-1: #eeedf4;
+  --color-fix-white-2: #dedeeb;
+  --color-fix-white-3: #ccccdb;
+
+  --color-fix-black: #090909;
+  --color-fix-black-1: #121212;
+  --color-fix-black-2: #1a1a1a;
+}

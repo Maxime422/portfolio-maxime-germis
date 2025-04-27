@@ -1,0 +1,33 @@
+{
+  "name": "maxim/template-project",
+  "description": "A template project for scalable web development.",
+  "type": "project",
+  "license": "MIT",
+  "keywords": [
+    "template",
+    "php",
+    "mvc",
+    "web",
+    "starter"
+  ],
+  "require": {
+    "php": "^8.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "Maxim\\TemplateProject\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Maxime Germis",
+      "email": "germismaxime@gmail.com"
+    }
+  ],
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
