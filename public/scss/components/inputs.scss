@@ -1,0 +1,38 @@
+@use "./buttons.scss" as *;
+
+/************** Inputs **************/
+%inputs {
+  @include component-btn(
+    var(--padding-medium),
+    1px solid var(--color-white-3),
+    var(--color-white-2),
+    var(--color-black),
+    var(--font-weight-medium),
+    flex
+  );
+  transition: 50ms ease-out;
+}
+
+.inputs {
+  @extend %inputs;
+
+  &:focus {
+    border: 1px solid var(--color-black);
+  }
+}
+
+.inputs-error {
+  @extend %inputs;
+  border: 1px solid var(--color-red);
+  color: var(--color-red);
+}
+
+.inputs-valid {
+  @extend %inputs;
+  border: 1px solid var(--color-green);
+  color: var(--color-green);
+}
+
+input[type="checkbox"].inputs:checked {
+  background-color: var(--color-blue);
+}

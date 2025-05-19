@@ -6,16 +6,13 @@
   --font-weight-semi-bold: 600;
   --font-weight-bold: 700;
   --font-weight-extra-bold: 800;
-  --font-weight-black: 900;
 
   /* Fonts sizes */
-  --text-size-body-slim: 0.75rem;
+  --text-size-body-slim: 0.85rem;
   --text-size-body: 1rem;
-  --text-size-title-medium: 1.2rem;
   --text-size-title-large: 1.4rem;
-  --text-size-headline-medium: 1.7rem;
   --text-size-display-medium: 2.8rem;
-  --text-size-primary-title: 4.2rem;
+  --text-size-primary-title: 4.6rem;
 
   /* Borders */
   --border-radius-extra-small: 0.25rem;
@@ -25,17 +22,10 @@
 
   /* Margin and padding */
   --margin-small: 0.5rem;
-  --margin-left-right-small: 0.5rem 0;
   --margin-medium: 1rem;
-  --margin-left-right-medium: 1rem 0;
   --margin-large: 1.5rem;
-  --margin-left-right-large: 2rem 0;
   --margin-extra-large: 2.5rem;
   --margin-extra: 4rem;
-  --margin-left-right-extra: 4rem 0;
-  --margin-top-bottom-small: 0.5rem 0;
-  --margin-top-bottom-medium: 1rem 0;
-  --margin-top-bottom-large: 2rem 0;
 
   --padding-small: 0.5rem;
   --padding-medium-small: 0.75rem;
@@ -43,17 +33,6 @@
   --padding-large: 1.5rem;
   --padding-extra-large: 2rem;
   --padding-extra: 3rem;
-  --padding-tags-small: 0.5rem 0.75rem;
-  --padding-btn-medium: 0.6rem 1rem;
-  --padding-rank-medium: 0.25rem 0.5rem;
-
-  --padding-left-right-small: 0 0.5rem;
-  --padding-left-right-medium: 0 1rem;
-  --padding-left-right-large: 0 1.5rem;
-  --padding-left-right-extra: 4rem 5rem;
-  --padding-top-bottom-large: 2rem 0;
-  --padding-top-bottom-extra: 4rem 0;
-  --padding-top-bottom-medium: 1rem 0;
 
   /* Gaps */
   --gap-small: 0.5rem;
@@ -61,5 +40,6 @@
   --gap-medium: 1rem;
   --gap-large: 1.5rem;
   --gap-extra-large: 2rem;
+  --gap-extra-extra-large: 3rem;
   --gap-extra: 4rem;
 }

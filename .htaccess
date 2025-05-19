@@ -1,51 +1,40 @@
-# Force simple error message asset files
-
-<IfModule mod_authz_core.c>
-  <FilesMatch "\.(make|test|md|po|sh|.*sql|.*bson|tpl(\.php)?|svn-base|env|bak)$">
-    Require all denied
-  </FilesMatch>
-</IfModule>
-
-# Don't show directory listings for URLs which map to a directory
-
+# Empêche l'affichage des répertoires
 Options -Indexes
 
 # Compression GZip
-
 <IfModule mod_deflate.c>
   AddOutputFilterByType DEFLATE text/plain text/html text/css text/javascript application/javascript application/json application/xml
 </IfModule>
 
-# Set the errors pages
-
+# Pages d'erreur personnalisées
 ErrorDocument 400 /errors/400.html
 ErrorDocument 401 /errors/401.html
 ErrorDocument 403 /errors/403.html
 ErrorDocument 404 /errors/404.html
 ErrorDocument 500 /errors/500.html
 
-# Set the default handler
-
+# Définit le fichier par défaut
 DirectoryIndex index.php
 
 # Réécriture d'URL pour un front controller
-
 <IfModule mod_rewrite.c>
   RewriteEngine On
+
   # Si le site est dans un sous-dossier, adapte RewriteBase
-  RewriteBase /template-project
+  RewriteBase /flux/projects/portfolio-maxime-germis/
 
-# Block access to "hidden" directories whose names begin with
+  # Exclut les fichiers existants (CSS, JS, images, etc.) de la réécriture
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
 
-RewriteCond %{REQUEST_FILENAME} -f [OR]
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteRule "(^|/)\." - [F]
-
-## Rewrite rules
-
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ index.php [QSA,L]
+  # Réécrit les URLs pour le front controller
+  RewriteRule ^([a-z0-9]+)$ index.php?action=$1 [QSA,L]
 </IfModule>
 
-## Location: /.htaccess
+# Bloque l'accès aux fichiers cachés (commençant par un point)
+<IfModule mod_authz_core.c>
+  <FilesMatch "^\.(.*)$">
+    Require all denied
+  </FilesMatch>
+</IfModule>

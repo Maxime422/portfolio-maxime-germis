@@ -1,0 +1,64 @@
+/************** Typography Styles Texts **************/
+
+/* Titles */
+#primary-title {
+  font-size: var(--text-size-primary-title);
+  font-weight: var(--font-weight-extra-bold);
+}
+
+.secondary-title {
+  @extend %secondary-title;
+}
+
+%secondary-title {
+  font-size: var(--text-size-display-medium);
+  font-weight: var(--font-weight-extra-bold);
+}
+
+%section-title {
+  font-size: var(--text-size-title-large);
+  font-weight: var(--font-weight-semi-bold);
+}
+
+%secondary-text-title {
+  font-size: var(--text-size-body);
+  font-weight: var(--font-weight-bold);
+}
+
+%secondary-text-body {
+  font-size: var(--text-size-body);
+  font-weight: var(--font-weight-semi-bold);
+}
+
+// Body text
+%text-body {
+  font-size: var(--text-size-body);
+  font-weight: var(--font-weight-semi-bold);
+}
+
+%text-small {
+  font-size: var(--text-size-body);
+  font-weight: var(--font-weight-semi-bold);
+}
+
+.subtitle {
+  @extend %section-title;
+}
+
+// Colors
+.gray-text {
+  color: var(--color-gray);
+}
+
+.green-text {
+  color: var(--color-green);
+  font-weight: var(--font-weight-bold);
+}
+
+.bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.text-underline {
+  text-decoration: underline;
+}

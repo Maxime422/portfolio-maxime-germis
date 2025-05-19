@@ -1,0 +1,46 @@
+/************** Buttons **************/
+@mixin component-btn($padding, $border, $bg-color, $text-color, $text-weight, $display, $gap: var(--gap-small)) {
+  padding: $padding;
+  border: $border;
+  background-color: $bg-color;
+  color: $text-color;
+  font-weight: $text-weight;
+  display: $display;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius-small);
+  gap: $gap;
+}
+
+%btn-base {
+  @include component-btn(
+    var(--padding-medium-small),
+    1px solid var(--color-black),
+    var(--color-black),
+    var(--color-white),
+    var(--font-weight-semi-bold),
+    inline-flex
+  );
+}
+
+.btn-base {
+  @extend %btn-base;
+}
+
+.btn-base-bg-variant {
+  @extend %btn-base;
+  border: 1px solid var(--color-fix-white);
+  background-color: var(--color-white-opacity-20);
+  color: var(--color-fix-white);
+}
+
+.btn-primary {
+  @include component-btn(
+    var(--padding-medium-small),
+    1px solid var(--color-white),
+    var(--color-white),
+    var(--color-black),
+    var(--font-weight-semi-bold),
+    inline-flex
+  );
+}

@@ -1,34 +1,34 @@
 <?php
-// index.php - Point d'entrée principal
+session_start();
 
-// Plus tard tu pourras router ici vers tes contrôleurs MVC
-?>
-<!DOCTYPE html>
-<html lang="fr">
+// Gestion basique de la langue
+if (isset($_GET['lang'])) {
+  $_SESSION['lang'] = $_GET['lang'];
+  $url = strtok($_SERVER["REQUEST_URI"], '?');
+  header("Location: $url");
+  exit;
+}
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Mon modèle FBX - Three.js</title>
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-      background: #000;
+// Charge les traductions
+$lang = $_SESSION['lang'] ?? 'fr';
+$translations = require __DIR__ . '/src/lang/' . $lang . '.php';
+
+require_once './vendor/autoload.php';
+$baseUrl = rtrim(dirname($_SERVER['SCRIPT_NAME']), '/') . '/';
+
+try {
+  if (isset($_GET['action'])) {
+    $controller = new \Application\controllers\ProjectController();
+    $action = $_GET['action'] ?? 'index';
+    if (method_exists($controller, $action)) {
+      $controller->$action();
+    } else {
+      throw new Exception("Undefined action : $action");
     }
-
-    canvas {
-      display: block;
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- Tu peux ajouter ici un <div id="loader"></div> si tu veux un loader -->
-
-  <script type="module" src="/flux/projects/portfolio-maxime-germis/public/js/modules/functions.js"></script>
-
-</body>
-
-</html>
+  } else {
+    require './src/views/pages/home.php';
+  }
+} catch (Exception $e) {
+  $errorMessage = $e->getMessage();
+  require './src/views/pages/error-404.php';
+}

@@ -1,0 +1,34 @@
+/************** Section / Articles **************/
+@mixin style-box($padding, $border, $bg-color) {
+  padding: $padding;
+  border: $border;
+  background-color: $bg-color;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-large);
+  border-radius: var(--border-radius-medium);
+}
+
+.base-style-box {
+  @include style-box(var(--padding-extra-large), 1px solid var(--color-white-3), var(--color-white-1));
+}
+
+%small-style-box {
+  @include style-box(var(--padding-medium), 1px solid var(--color-white-3), var(--color-white-1));
+}
+
+.small-style-box {
+  @extend %small-style-box;
+  gap: var(--gap-medium);
+}
+
+.small-style-box-row {
+  @extend %small-style-box;
+  gap: var(--gap-medium);
+  flex-direction: row;
+}
+
+.small-inside-box {
+  @extend %small-style-box;
+  background-color: var(--color-white-2);
+}

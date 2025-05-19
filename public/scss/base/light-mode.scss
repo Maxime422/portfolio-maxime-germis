@@ -1,0 +1,39 @@
+/* Light mode colors */
+[data-theme="light"] {
+  --color-blue: #1b37ff;
+  --color-blue-1: #041562;
+
+  --color-white-opacity-20: rgb(9, 9, 9, 0.2);
+  --color-white: #090909;
+  --color-white-1: #121212;
+  --color-white-2: #1c1a23;
+  --color-white-3: #1a1a1a;
+  --color-white-4: #292929;
+
+  --color-gray: #6f6f6f;
+
+  --color-black-opacity-20: rgba(250, 250, 250, 0.2);
+  --color-black-0: #ffffff;
+  --color-black: #fafafa;
+  --color-black-1: #eeedf4;
+  --color-black-2: #d5d5e1;
+  --color-black-3: #dedeeb;
+  --color-black-4: #bebec8;
+
+  --color-red: #d62038;
+  --color-red-1: #d44b46;
+  --color-red-2: #e45a6d;
+
+  --color-green: #1e7864;
+  --color-green-1: #03a086;
+  --color-green-2: #02ccaa;
+
+  --color-fix-white: #fafafa;
+  --color-fix-white-1: #eeedf4;
+  --color-fix-white-2: #dedeeb;
+  --color-fix-white-3: #ccccdb;
+
+  --color-fix-black: #090909;
+  --color-fix-black-1: #121212;
+  --color-fix-black-2: #1a1a1a;
+}

@@ -1,0 +1,39 @@
+/************** Body **************/
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-black-0);
+  color: var(--color-white);
+  font-size: var(text-size-body-slim);
+  font-weight: var(--font-weight-semi-bold);
+}
+
+/************** Reset **************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  color: inherit;
+  font: inherit;
+  text-decoration: none;
+  list-style: none;
+  border: none;
+}
+
+button,
+select,
+input,
+a,
+textarea {
+  all: unset;
+  display: inline-block;
+  cursor: pointer;
+}
+
+i {
+  font-family: "icos" !important;
+  font-size: 24px;
+  line-height: 1;
+  display: inline-block;
+}
+

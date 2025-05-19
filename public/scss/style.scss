@@ -1,7 +1,180 @@
 /* Import global variables */
-@use "./light-mode.scss";
-@use "./dark-mode.scss";
-@use "./reset.scss";
-@use "./variables.scss";
-@use "./component.scss";
+@use "./base/variables.scss";
+@use "./base/mixins.scss" as *;
+@use "./base/reset.scss";
 
+@use "./base/typography.scss";
+@use "./base/generic-class.scss";
+@use "./base/light-mode.scss";
+@use "./base/dark-mode.scss";
+
+/* Import components */
+@use "./components/utilities.scss";
+@use "./components/boxes.scss";
+@use "./components/buttons.scss";
+@use "./components/inputs.scss";
+@use "./components/tags.scss";
+
+/* Import layouts */
+@use "./layout/footer.scss";
+
+/* Dark mode colors */
+[data-theme="dark"] {
+  --color-blue: #1b37ff;
+  --color-blue-1: #041562;
+
+  --color-white-opacity-20: rgba(250, 250, 250, 0.2);
+  --color-white: #fafafa;
+  --color-white-1: #eeedf4;
+  --color-white-2: #d5d5e1;
+  --color-white-3: #dedeeb;
+  --color-white-4: #bebec8;
+
+  --color-gray: #9b9a9f;
+
+  --color-black-opacity-20: rgb(9, 9, 9, 0.2);
+  --color-black-0: #000000;
+  --color-black: #090909;
+  --color-black-1: #121212;
+  --color-black-2: #1c1a23;
+  --color-black-3: #1a1a1a;
+  --color-black-4: #292929;
+
+  --color-red: #d62038;
+  --color-red-1: #d44b46;
+  --color-red-2: #e45a6d;
+
+  --color-green: #02ccaa;
+  --color-green-1: #03a086;
+  --color-green-2: #1e7864;
+
+  --color-fix-white: #fafafa;
+  --color-fix-white-1: #eeedf4;
+  --color-fix-white-2: #dedeeb;
+  --color-fix-white-3: #ccccdb;
+
+  --color-fix-black: #090909;
+  --color-fix-black-1: #121212;
+  --color-fix-black-2: #1a1a1a;
+}
+
+:root {
+  /* Fonts */
+  --font-main: "Montserrat", sans-serif;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extra-bold: 800;
+
+  /* Fonts sizes */
+  --text-size-body-slim: 0.85rem;
+  --text-size-body: 1rem;
+  --text-size-title-large: 1.4rem;
+  --text-size-display-medium: 2.8rem;
+  --text-size-primary-title: 4.6rem;
+
+  /* Borders */
+  --border-radius-extra-small: 0.25rem;
+  --border-radius-small: 0.5rem;
+  --border-radius-medium: 1rem;
+  --border-radius-circle: 50%;
+
+  /* Margin and padding */
+  --margin-small: 0.5rem;
+  --margin-medium: 1rem;
+  --margin-large: 1.5rem;
+  --margin-extra-large: 2.5rem;
+  --margin-extra: 4rem;
+
+  --padding-small: 0.5rem;
+  --padding-medium-small: 0.75rem;
+  --padding-medium: 1rem;
+  --padding-large: 1.5rem;
+  --padding-extra-large: 2rem;
+  --padding-extra: 3rem;
+
+  /* Gaps */
+  --gap-small: 0.5rem;
+  --gap-medium-small: 0.75rem;
+  --gap-medium: 1rem;
+  --gap-large: 1.5rem;
+  --gap-extra-large: 2rem;
+  --gap-extra-extra-large: 3rem;
+  --gap-extra: 4rem;
+}
+
+/*-------------------------------------------------------------------------*/
+
+/************** Home Page **************/
+#home-page {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  #bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  .content {
+    height: 100vh;
+    padding: var(--padding-extra-large);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+
+    .main-content {
+      display: flex;
+      justify-self: flex-end;
+      justify-content: space-between;
+      width: 100%;
+
+      .main-text {
+        line-height: 1.2;
+        margin-bottom: 3rem;
+      }
+
+      .sub-text {
+        display: flex;
+        align-items: center;
+        gap: var(--gap-extra-large);
+
+        .links {
+          display: flex;
+          flex-direction: column;
+          gap: var(--gap-small);
+
+          i {
+            font-size: 1rem;
+            padding-right: var(--padding-small);
+          }
+        }
+
+        .tags > * {
+          padding-right: var(--padding-extra-large);
+        }
+      }
+
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        gap: var(--padding-medium-small);
+        align-items: flex-end;
+
+        .btn-primary {
+          margin-top: var(--margin-extra-large);
+        }
+      }
+    }
+  }
+}

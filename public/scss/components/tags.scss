@@ -1,0 +1,48 @@
+/************** Ranks Tags **************/
+@mixin rank-tags($border, $bg-color, $text-color) {
+  border: $border;
+  background-color: $bg-color;
+  color: $text-color;
+}
+
+%rank-tags {
+  padding: var(--padding-rank-medium);
+  border-radius: var(--border-radius-extra-small);
+  font-weight: var(--font-weight-medium);
+  display: inline-flex;
+  text-transform: uppercase;
+}
+
+.rank-tags-bronze {
+  @extend %rank-tags;
+  @include rank-tags(1px solid var(--color-ranks-bronze), var(--color-ranks-bronze-bg), var(--color-ranks-bronze));
+}
+
+.rank-tags-silver {
+  @extend %rank-tags;
+  @include rank-tags(1px solid var(--color-ranks-silver), var(--color-ranks-silver-bg), var(--color-ranks-silver));
+}
+
+.rank-tags-gold {
+  @extend %rank-tags;
+  @include rank-tags(1px solid var(--color-ranks-gold), var(--color-ranks-gold-bg), var(--color-ranks-gold));
+}
+
+.rank-tags-platinum {
+  @extend %rank-tags;
+  @include rank-tags(
+    1px solid var(--color-ranks-platinum),
+    var(--color-ranks-platinum-bg),
+    var(--color-ranks-platinum)
+  );
+}
+
+.rank-tags-master {
+  @extend %rank-tags;
+  @include rank-tags(1px solid var(--color-ranks-master), var(--color-ranks-master-bg), var(--color-ranks-master));
+}
+
+.rank-tags-legend {
+  @extend %rank-tags;
+  @include rank-tags(1px solid var(--color-ranks-legend), var(--color-ranks-legend-bg), var(--color-ranks-legend));
+}
